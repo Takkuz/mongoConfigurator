@@ -1,0 +1,26 @@
+{
+  "name": "mongoconfigurator",
+  "version": "1.0.0",
+  "description": "MongoDB initializator to create collections",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Takkuz/mongoConfigurator.git"
+  },
+  "keywords": [
+    "mongo",
+    "configurator"
+  ],
+  "author": "Vittorio Giovanelli",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Takkuz/mongoConfigurator/issues"
+  },
+  "homepage": "https://github.com/Takkuz/mongoConfigurator#readme",
+  "dependencies": {
+    "mongodb": "^2.2.26"
+  }
+}

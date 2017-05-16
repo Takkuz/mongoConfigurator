@@ -14,7 +14,9 @@ After cloning git repository run `npm i` to install dependences
 
 ## Configuration
 
-Modify `config.js` according to your needs
+Modify `config.js` according to your needs:
+- **forceUpdate** forces to drop existing index and recreate it
+- **forceDelete** delete an existing index 
 
 ## Running
 

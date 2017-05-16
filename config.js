@@ -8,13 +8,14 @@ module.exports = {
       {
         name: 'users',
         indexes: [
-          { name: 'email', key: { email: 1 }, options: { unique: true } }
+          { name: 'email_1', key: { email: 1 }, options: { unique: true }, forceUpdate: true },
+          { name: 'displayName_1', forceDelete: true }
         ]
       },
       {
         name: 'chat',
         indexes: [
-          { name: 'rcptId', key: { rcptId: 1 }, options: { unique: true } }
+          { name: 'rcptId_1', key: { rcptId: 1 }, options: { unique: true }, forceUpdate: true }
         ]
       }
     ]

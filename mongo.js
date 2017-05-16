@@ -9,11 +9,19 @@ function checkIndexes (configIndexes,collection) {
   function createIndexChecker (configIndex) {
     return function (collectionIndexes) {
       let found = false
+      let promise = Promise.resolve()
       for (let el of collectionIndexes) {
         if (el.name === configIndex.name) { found = true; break }
       }
       // If index not found create it
-      return found || collection.createIndex(configIndex.key, configIndex.options)
+      if (found) {
+        if (configIndex.forceUpdate) {
+          promise = collection.dropIndex(configIndex.name)
+        } else if (configIndex.forceDelete) {
+          return collection.dropIndex(configIndex.name)
+        } else { return promise }
+      }
+      return promise.then(() => collection.createIndex(configIndex.key, configIndex.options))
     }
   }
 

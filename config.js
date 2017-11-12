@@ -1,8 +1,6 @@
 module.exports = {
   mongo: {
-    url: 'mongodb://localhost:27017/test',
-    username: 'myTester',
-    password: 'xyz123',
+    url: 'mongodb://myTester:xyz123@localhost:27017/test',
 
     collections: [
       {

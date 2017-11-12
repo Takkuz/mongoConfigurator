@@ -21,6 +21,6 @@
   },
   "homepage": "https://github.com/Takkuz/mongoConfigurator#readme",
   "dependencies": {
-    "mongodb": "^2.2.26"
+    "mongodb": "^2.2.33"
   }
 }

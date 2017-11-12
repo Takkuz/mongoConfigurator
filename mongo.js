@@ -21,6 +21,7 @@ function checkIndexes (configIndexes,collection) {
           return collection.dropIndex(configIndex.name)
         } else { return promise }
       }
+      if (configIndex.forceDelete) { return promise }
       return promise.then(() => collection.createIndex(configIndex.key, configIndex.options))
     }
   }
@@ -73,7 +74,7 @@ function mongoModule (collectionName) {
 function runModule () {
   mongoModule.$promise = Promise.resolve()
   .then(() => mongo.connect(config.url))
-  .then(db => db.authenticate(config.username,config.password).then(() => db))
+  // .then(db => db.authenticate(config.username,config.password).then(() => db))
   .then(db => checkCollections(db))
   .then(db => {
     log.info('MongoDB connected succesfully')
